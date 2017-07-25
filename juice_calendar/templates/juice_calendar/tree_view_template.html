@@ -1,0 +1,13 @@
+<li><a href="http://127.0.0.1:8000/calendar/{{username}}/{{Item.product_item_name}}/" >{{Item.product_item_name}} </a>
+	{% 	if Item.sub_system != 'NULL' %}
+		<ul>
+		{% for subitem in Item.sub_system.all %}
+			{% with Item=subitem template_name="juice_calendar/tree_view_template.html" %}
+				{%include template_name%}
+			{%endwith%}
+		{%endfor%}
+		</ul>
+	{%endif%}
+</li>
+
+

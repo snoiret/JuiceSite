@@ -1,0 +1,15 @@
+li a {
+	color: green;
+}
+
+#sidebar {
+	width:20%;
+	float: right;
+	border:#999999 1px solid; 
+}
+
+
+#dayCell {
+	border:#999999 1px solid; 
+}
+

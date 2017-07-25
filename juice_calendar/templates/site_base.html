@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{%load static %}
+<link rel="stylesheet" type="text/css" href="{%static 'juice_calendar/style.css' %}"/>
+<html>
+	<head>
+		<style>
+		{% block style%}{% endblock%}
+		</style>
+	</head>
+
+	<body>
+		<div>
+			<center>	
+			<h1>Juice Calendar - {% block title %}{% endblock%} </h1>
+			</center>		
+		</div>
+
+		<div id="sidebar">
+			{% block sidebar_block %}	
+			<ul>
+			<li><a href="#">Link1</a></li>
+			<li><a href="#">Link2</a></li>
+			<li><a href="#">Link3</a></li>
+			{% endblock %}
+		</div>
+
+		<div>
+			{% block body_block %}This is the calendar block default content{% endblock%}
+		</div>
+				
+		<hr/>
+
+		<div>
+			<ul>
+			{% if user.is_authenticated %}
+ 				<li><a href="{% url 'admin:index' %}">Modify Event </a></li>
+ 				<li><a href="http://127.0.0.1:8000/logout">Logout</a></li>
+			{% endif %}	
+ 				<li><a href="/calendar/About/">About</a></li>
+		</div>				
+	</body>
+</html>

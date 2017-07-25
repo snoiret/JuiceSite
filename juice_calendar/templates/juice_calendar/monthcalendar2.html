@@ -1,0 +1,17 @@
+{% extends 'site_base.html' %}
+{%load juice_calendar_tags%}
+
+
+
+{% block title %}{{ username }}{% endblock %}
+
+{% block body_block %}
+{% autoescape off %}
+<center>
+{%calendar_other_view %} 
+</center>
+{% endautoescape %}
+
+{% endblock %}
+
+

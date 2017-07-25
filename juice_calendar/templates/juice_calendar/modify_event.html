@@ -1,0 +1,16 @@
+{% extends 'site_base.html' %}
+{%load juice_calendar_tags%}
+
+{% block title %}{{ currentItem }}{% endblock %}
+
+
+{% block sidebar_block %}
+<ul>
+	{% include "juice_calendar/tree_view_template.html" %}
+</ul> 
+
+{% endblock %}
+
+
+{% block body_block %}{%calendar_tag_v3 meetings %}{% endblock %}
+

@@ -1,0 +1,23 @@
+{% extends 'site_base.html' %}
+
+{% block title %}{{ meeting.occurence_name }}{% endblock %}
+
+{% block sidebar_block %}
+<ul>
+	{% include "juice_calendar/tree_view_template.html" %}
+</ul> 
+
+{% endblock %}
+
+
+{% block body_block %}
+ <ul>
+	<li>{{meeting.event}}</li>
+	<li>Time: {{ meeting.start_time }}</li>
+	<li>Attendees:</li>
+		<ul>
+		{% for attendee in attendees %}
+		<li> {{ attendee.user.get_full_name }}</li>
+		{% endfor %}  
+{% endblock %}
+
