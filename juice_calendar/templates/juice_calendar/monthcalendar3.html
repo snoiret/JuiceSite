@@ -1,6 +1,6 @@
 {% extends 'site_base.html' %}
 {%load juice_calendar_tags%}
-
+{% load static %}
 {% block title %}{{ username }}{% endblock %}
 
 
@@ -8,7 +8,6 @@
 <ul>
 	{% include "juice_calendar/tree_view_template.html" %}
 </ul> 
-
 {% endblock %}
 
 

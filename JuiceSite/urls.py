@@ -22,5 +22,5 @@ urlpatterns = [
     url(r'^logout/$', auth_views.logout, {'next_page':'/login'}, name='logout'),
     url(r'^admin/', admin.site.urls),
 	url(r'^calendar/', include('juice_calendar.urls')),
-	url('^', include('django.contrib.auth.urls')),
+	url(r'^', include('django.contrib.auth.urls')),
 ]

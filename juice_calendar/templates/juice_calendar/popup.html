@@ -1,0 +1,17 @@
+<p>You are filtering by {{filt_id}}</p>
+
+{% if filt_id == 'attendees' %}
+<form action="{% url 'filter' attendees %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit" />
+</form>
+{%endif%}
+
+{% if filt_id == 'product' %}
+<form action="{% url 'filter' product %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit" />
+</form>
+{%endif%}

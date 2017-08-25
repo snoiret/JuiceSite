@@ -23,10 +23,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'a)hyv(i@)=wa4hp_=($y@+_gh=j($0t&eh73g!58uf0^x#zu%h'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = [juicesite.pythonanywhere.com]
-
+#ALLOWED_HOSTS = [juicesite.pythonanywhere.com]
+ALLOWED_HOSTS = []
 
 # Application definition
 

@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 {%load static %}
+
+<script type="text/javascript" src="{% static '/juice_calendar/js/jquery-3.2.1.js' %}"></script>
+<script type="text/javascript" src="{% static '/juice_calendar/js/rango-jquery.js' %}"></script>
+<script type="text/javascript" src="{% static '/juice_calendar/js/jquery-ui.js' %}"></script>
+
 <link rel="stylesheet" type="text/css" href="{%static 'juice_calendar/style.css' %}"/>
+<link rel="stylesheet" href="{%static 'juice_calendar/jquery-ui.css' %}"/>
+
+
 <html>
 	<head>
 		<style>
@@ -10,11 +18,32 @@
 
 	<body>
 		<div>
+
+<!-- Filter -->
+
+{% block filter %} 
+<div>
+			<div class="dropdown">
+			<button onclick="myFunction()" class="dropbtn">Filter by</button>
+				<div id="myDropdown" class="dropdown-content">
+					<a href="/calendar/filter/attendees" class="test">Attendees</a><br>
+					<a href="/calendar/filter/product" class="test">Product Item</a><br>
+					<div id="somediv" title="this is a dialog" style="display:none;">
+    					<iframe id="thedialog" width="350" height="350"></iframe>
+					</div>
+  				</div>
+			</div> 
+
+</div>
+{% endblock %} 
+
+<!-- ************ -->
 			<center>	
 			<h1>Juice Calendar - {% block title %}{% endblock%} </h1>
-			</center>		
+			</center>
+		
 		</div>
-
+<!-- Sidebar with product tree -->
 		<div id="sidebar">
 			{% block sidebar_block %}	
 			<ul>
@@ -23,7 +52,7 @@
 			<li><a href="#">Link3</a></li>
 			{% endblock %}
 		</div>
-
+<!-- ************ -->
 		<div>
 			{% block body_block %}This is the calendar block default content{% endblock%}
 		</div>

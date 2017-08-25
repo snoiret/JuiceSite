@@ -1,0 +1,23 @@
+{% extends 'site_base.html' %}
+
+{% block title %}About{% endblock %}
+
+{% block sidebar_block %}
+<ul>
+	{% include "juice_calendar/tree_view_template.html" %}
+</ul> 
+
+{% endblock %}
+
+
+{% block body_block %}
+<button onClick="alert('You clicked the button using Javascript.');">
+       Click Me - I run Javascript
+</button>
+
+<button id="about-btn"> Click Me - I run JQuery</button>
+<p>This is a example</p>
+<p>This is a test</p>
+<p>This is another example</p>
+{% endblock %}
+

@@ -96,6 +96,7 @@ class Task (models.Model):
 	due_date = models.DateTimeField(default=timezone.now()+datetime.timedelta(days=7))
 	description = models.TextField(null=True)
 	product_item = models.ForeignKey('ProductItem')
+	responsable = models.ForeignKey('Profile', null='True')
 	def __str__(self):
 		return self.task_name
 
